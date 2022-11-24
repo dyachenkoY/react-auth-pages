@@ -16,35 +16,8 @@ const initialState = {
 class SignUpForm extends Component {
   state = structuredClone(initialState);
 
-  submitHandler = (e) => {
-    const { email, password } = this.state;
-    e.preventDefault();
-
-    signUp({
-      email,
-      password,
-    });
-
-    this.setState({
-      ...initialState,
-    });
-  };
-
-  handleChange = (e) => {
-    const {
-      target: { value, name, type, checked },
-    } = e;
-
-    const newValue = type === "checkbox" ? checked : value;
-
-    const newState = {
-      [name]: newValue,
-    };
-    this.setState(newState);
-  };
-
   render() {
-    const { email, password, isRemembered, isShowed } = this.state;
+    const { email, password, isShowed } = this.state;
     return (
       <form className={styles.form} onSubmit={this.submitHandler}>
         <h1 className={styles.title}>LOGIN TO YOUR ACCOUNT</h1>
@@ -53,7 +26,6 @@ class SignUpForm extends Component {
           type="email"
           name="email"
           value={email}
-          onChange={this.handleChange}
           placeholder="Email address"
         />
         <input
@@ -61,18 +33,11 @@ class SignUpForm extends Component {
           type={!isShowed ? "password" : "text"}
           name="password"
           value={password}
-          onChange={this.handleChange}
           placeholder="Password"
         />
         <div className={styles.checkboxContainer}>
           <label className={styles.checkbox}>
-            <input
-              type="checkbox"
-              name="isRemembered"
-              checked={isRemembered}
-              onChange={this.handleChange}
-            />{" "}
-            Remember Me
+            <input type="checkbox" name="isRemembered" /> Remember Me
           </label>
           <a className={styles.link} href="#">
             Forgot Password

@@ -90,7 +90,6 @@ class RegistrationForm extends Component {
               type="radio"
               name="gender"
               value="female"
-              checked
             />{" "}
             Join As a Creative or Marketplace Seller
             <p className={styles.radioDescr}>
