@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./SignUpForm.module.scss";
 import showPass from "./img/showPass.png";
+import Header from "../Header";
 
 function signUp(userData) {
   console.log(`${userData.email} ${userData.password} is registered`);
@@ -19,6 +20,8 @@ class SignUpForm extends Component {
   render() {
     const { email, password, isShowed } = this.state;
     return (
+      <>
+      <Header />
       <form className={styles.form} onSubmit={this.submitHandler}>
         <h1 className={styles.title}>LOGIN TO YOUR ACCOUNT</h1>
         <input
@@ -50,6 +53,7 @@ class SignUpForm extends Component {
           Sign in with Google
         </a>
       </form>
+      </>
     );
   }
 }

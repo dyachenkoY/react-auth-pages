@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "../Header";
 import styles from "./RegistrationForm.module.scss";
 
 const initialState = {
@@ -23,6 +24,7 @@ class RegistrationForm extends Component {
     } = this.state;
     return (
       <>
+      < Header />
         <h1 className={styles.title}>CREATE AN ACCOUNT</h1>
         <p className={styles.title}>
           We always keep your name and email address private.
