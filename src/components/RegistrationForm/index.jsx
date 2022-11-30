@@ -24,7 +24,7 @@ class RegistrationForm extends Component {
     } = this.state;
     return (
       <>
-      < Header />
+      < Header location={this.props.location}/>
         <h1 className={styles.title}>CREATE AN ACCOUNT</h1>
         <p className={styles.title}>
           We always keep your name and email address private.
@@ -34,42 +34,42 @@ class RegistrationForm extends Component {
             className={styles.input}
             type="text"
             name="firstName"
-            value={firstName}
+            defaultValue={firstName}
             placeholder="First Name"
           />
           <input
             className={styles.input}
             type="text"
             name="lastName"
-            value={lastName}
+            defaultValue={lastName}
             placeholder="Last Name"
           />
           <input
             className={styles.input}
             type="text"
             name="displayName"
-            value={dispalyName}
+            defaultValue={dispalyName}
             placeholder="Display Name"
           />
           <input
             className={styles.input}
             type="email"
             name="email"
-            value={email}
+            defaultValue={email}
             placeholder="Email Address"
           />
           <input
             className={styles.input}
             type="password"
             name="password"
-            value={password}
+            defaultValue={password}
             placeholder="Password"
           />
           <input
             className={styles.input}
             type="password"
             name="passwordConfirmation"
-            value={passwordConfirm}
+            defaultValue={passwordConfirm}
             placeholder="Password Confirmation"
           />
           <label className={styles.radioLabel}>
@@ -77,9 +77,9 @@ class RegistrationForm extends Component {
               className={styles.radioBtn}
               type="radio"
               name="gender"
-              value="female"
-              checked
-            />{" "}
+              defaultValue="female"
+              defaultChecked
+            />
             Join As a Buyer
             <p className={styles.radioDescr}>
               I am looking for a Name, Logo or Tagline for my business, brand or
@@ -91,8 +91,8 @@ class RegistrationForm extends Component {
               className={styles.radioBtn}
               type="radio"
               name="gender"
-              value="female"
-            />{" "}
+              defaultValue="female"
+            />
             Join As a Creative or Marketplace Seller
             <p className={styles.radioDescr}>
               I plan to submit name ideas, Logo designs or sell names in Domain

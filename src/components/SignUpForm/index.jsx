@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import styles from "./SignUpForm.module.scss";
-import showPass from "./img/showPass.png";
 import Header from "../Header";
 
-function signUp(userData) {
-  console.log(`${userData.email} ${userData.password} is registered`);
-}
 
 const initialState = {
   email: "",
@@ -21,21 +17,21 @@ class SignUpForm extends Component {
     const { email, password, isShowed } = this.state;
     return (
       <>
-      <Header />
+      <Header location={this.props.location} />
       <form className={styles.form} onSubmit={this.submitHandler}>
         <h1 className={styles.title}>LOGIN TO YOUR ACCOUNT</h1>
         <input
           className={styles.input}
           type="email"
           name="email"
-          value={email}
+          defaultValue={email}
           placeholder="Email address"
         />
         <input
           className={styles.input}
           type={!isShowed ? "password" : "text"}
           name="password"
-          value={password}
+          defaultValue={password}
           placeholder="Password"
         />
         <div className={styles.checkboxContainer}>
